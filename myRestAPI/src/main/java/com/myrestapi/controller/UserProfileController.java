@@ -7,8 +7,12 @@ import java.util.Map;
 
 import javax.annotation.PostConstruct;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.myrestapi.model.UserProfile;
@@ -38,5 +42,26 @@ public class UserProfileController {
 		return new ArrayList<UserProfile>(userMap.values());
 	}
 	
+	// 데이터를 생성하는 api
+	@PutMapping("/user/{id}")
+	public void putUserProfile(@PathVariable("id")String id, @RequestParam("name")String name, @RequestParam("phone") String phone, @RequestParam("address") String address) {
+		UserProfile userProfile = new UserProfile(id, name, phone, address);
+		userMap.put(id, userProfile);
+	}
+	
+	// 데이터를 수정하는 api
+	@PostMapping("/user/{id}")
+	public void postUserProfile(@PathVariable("id")String id, @RequestParam("name")String name, @RequestParam("phone") String phone, @RequestParam("address") String address) {
+		UserProfile userProfile = userMap.get(id);
+		userProfile.setName(name);
+		userProfile.setPhoneNumber(phone);
+		userProfile.setAddress(address);
+	}
+	
+	// 데이터를 삭제하는 api
+	@DeleteMapping("user/{id}")
+	public void deleteUserProfile(@PathVariable("id") String id) {
+		userMap.remove(id);
+	}
 
 }
