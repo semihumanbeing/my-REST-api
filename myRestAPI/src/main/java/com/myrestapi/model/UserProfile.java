@@ -7,14 +7,14 @@ public class UserProfile {
 	
 	private String id;
 	private String name;
-	private String phoneNumber;
+	private String phone;
 	private String address;
 	
-	public UserProfile(String id, String name, String phoneNumber, String address) {
+	public UserProfile(String id, String name, String phone, String address) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.phoneNumber = phoneNumber;
+		this.phone = phone;
 		this.address = address;
 	}
 	
@@ -30,11 +30,11 @@ public class UserProfile {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getPhoneNumber() {
-		return phoneNumber;
+	public String getPhone() {
+		return phone;
 	}
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 	public String getAddress() {
 		return address;
