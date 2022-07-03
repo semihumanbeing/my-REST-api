@@ -1,4 +1,4 @@
-# myRESTAPI
+# my REST api
 project to make a REST api server
 
 ## Requirement
