@@ -1,5 +1,7 @@
 # my REST api
-project to make a REST api server
+project to make a REST api server<br>
+API 명세서: https://documenter.getpostman.com/view/21938184/UzQpvSZM
+
 
 ## Requirement
 A small RESTful api controller that has get/post/put/delete endpoints<br>
